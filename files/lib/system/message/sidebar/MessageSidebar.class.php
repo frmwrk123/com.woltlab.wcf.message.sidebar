@@ -36,7 +36,7 @@ class MessageSidebar {
 	 * list of user symbols
 	 * @var	array
 	 */
-	public $userSymbols = array();
+	public $userStatus = array();
 	
 	/**
 	 * list of user contacts
@@ -140,12 +140,12 @@ class MessageSidebar {
 	}
 	
 	/**
-	 * Returns the user symbols.
+	 * Returns the user status.
 	 *
 	 * @return array
 	 */
-	public function getUserSymbols() {
-		return $this->userSymbols;
+	public function getUserStatus() {
+		return $this->userStatus;
 	}
 	
 	/**
@@ -181,12 +181,12 @@ class MessageSidebar {
 	}
 	
 	/**
-	 * Adds a user symbol to the sidebar.
+	 * Adds a user status symbol to the sidebar.
 	 *
 	 * @param 	string		$value
 	 */
-	public function addUserSymbol($value) {
-		$this->userSymbols[] = array('value' => $value);
+	public function addUserStatus($value) {
+		$this->userStatus[] = array('value' => $value);
 	}
 	
 	/**
