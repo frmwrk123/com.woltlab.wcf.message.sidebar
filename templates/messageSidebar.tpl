@@ -36,11 +36,11 @@
 				{/if}
 			{/if}
 			
-			{if $sidebar->getUserSymbols()|count}
-				<div class="userSymbols">
+			{if $sidebar->getUserStatus()|count}
+				<div class="userStatus">
 					<ul>
-						{foreach from=$sidebar->getUserSymbols() item=$userSymbol}
-							<li>{@$userSymbol[value]}</li>
+						{foreach from=$sidebar->getUserStatus() item=$userStatus}
+							<li>{@$userStatus[value]}</li>
 						{/foreach}
 					</ul>
 				</div>
@@ -55,7 +55,7 @@
 			{/if}
 			
 			{if $sidebar->getUserContacts()|count}
-				<div class="userMessenger">
+				<div class="userContacts">
 					<ul>
 						{foreach from=$sidebar->getUserContacts() item=$userContact}
 							<li>{@$userContact[value]}</li>
@@ -74,18 +74,18 @@
 				</div>
 			</header>
 		
-			{if $sidebar->getUserSymbols()|count}
-				<div class="userSymbols">
+			{if $sidebar->getUserStatus()|count}
+				<div class="userStatus">
 					<ul>
-						{foreach from=$sidebar->getUserSymbols() item=$userSymbol}
-							<li>{@$userSymbol[value]}</li>
+						{foreach from=$sidebar->getUserStatus() item=$userStatus}
+							<li>{@$userStatus[value]}</li>
 						{/foreach}
 					</ul>
 				</div>
 			{/if}
 			
 			{if $sidebar->getUserContacts()|count}
-				<div class="userMessenger">
+				<div class="userContacts">
 					<ul>
 						{foreach from=$sidebar->getUserContacts() item=$userContact}
 							<li>{@$userContact[value]}</li>
