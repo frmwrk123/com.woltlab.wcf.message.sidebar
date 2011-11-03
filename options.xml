@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/options.xsd">
 	<import>
 		<categories>
@@ -37,7 +37,7 @@
 			</option>
 			<option name="message_sidebar_show_user_options">
 				<categoryname>message.general.sidebar</categoryname>
-				<optiontype>useroptions</optiontype>
+				<optiontype>text</optiontype>
 				<defaultvalue>location,occupation,homepage,email,icq,skype</defaultvalue>
 			</option>
 		</options>
