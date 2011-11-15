@@ -5,15 +5,16 @@
 			
 			<header>
 				<h1 class="userName">
-					{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS}
-						{if $sidebar->getUserProfile()->isOnline()}
-							<img src="{icon}online{/icon}" alt="" title="{lang}wcf.user.online{/lang}" />
-						{else}
-							<img src="{icon}offline{/icon}" alt="" title="{lang}wcf.user.offline{/lang}" />		
+					<a href="{link controller='User' id=$sidebar->getUserProfile()->userID}{/link}" title="{lang}wcf.user.viewProfile{/lang}">
+						{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS}
+							{if $sidebar->getUserProfile()->isOnline()}
+								<img src="{icon}online{/icon}" alt="" title="{lang}wcf.user.online{/lang}" />
+							{else}
+								<img src="{icon}offline{/icon}" alt="" title="{lang}wcf.user.offline{/lang}" />		
+							{/if}
 						{/if}
-					{/if}
-					
-					<a href="{link controller='User' id=$sidebar->getUserProfile()->userID}{/link}" title="{lang}wcf.user.viewProfile{/lang}"><span>{@$sidebar->getStyledUsername()}</span></a>
+						<span>{@$sidebar->getStyledUsername()}</span>
+					</a>
 				</h1>
 				
 				{if MODULE_USER_RANK && MESSAGE_SIDEBAR_ENABLE_RANK}
