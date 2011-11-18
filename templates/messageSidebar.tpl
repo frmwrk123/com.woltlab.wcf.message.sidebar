@@ -36,34 +36,6 @@
 					</div>
 				{/if}
 			{/if}
-			
-			{if $sidebar->getUserStatus()|count}
-				<div class="userStatus">
-					<ul>
-						{foreach from=$sidebar->getUserStatus() item=$userStatus}
-							<li>{@$userStatus[value]}</li>
-						{/foreach}
-					</ul>
-				</div>
-			{/if}
-			
-			{if $sidebar->getUserCredits()|count}
-				<div class="userCredits">
-					{foreach from=$sidebar->getUserCredits() item=$userCredit}
-						<p>{if $userCredit[url]}<a href="{@$userCredit[url]}">{@$userCredit[name]}: {@$userCredit[value]}</a>{else}{@$userCredit[name]}: {@$userCredit[value]}{/if}</p>
-					{/foreach}
-				</div>
-			{/if}
-			
-			{if $sidebar->getUserContacts()|count}
-				<div class="userContacts">
-					<ul>
-						{foreach from=$sidebar->getUserContacts() item=$userContact}
-							<li>{@$userContact[value]}</li>
-						{/foreach}
-					</ul>
-				</div>
-			{/if}
 		{else}
 			<header>
 				<h1 class="userName">
@@ -74,26 +46,39 @@
 					<p class="badge">{lang}wcf.user.guest{/lang}</p>
 				</div>
 			</header>
-		
-			{if $sidebar->getUserStatus()|count}
-				<div class="userStatus">
-					<ul>
-						{foreach from=$sidebar->getUserStatus() item=$userStatus}
-							<li>{@$userStatus[value]}</li>
-						{/foreach}
-					</ul>
-				</div>
-			{/if}
+		{/if}
 			
-			{if $sidebar->getUserContacts()|count}
-				<div class="userContacts">
-					<ul>
-						{foreach from=$sidebar->getUserContacts() item=$userContact}
-							<li>{@$userContact[value]}</li>
+		{if $sidebar->getUserStatus()|count}
+			<div class="userStatus">
+				<ul>
+					{foreach from=$sidebar->getUserStatus() item=$userStatus}
+						<li{if $userStatus[class]} class="{@$userStatus[class]}"{/if}>{@$userStatus[value]}</li>
+					{/foreach}
+				</ul>
+			</div>
+		{/if}
+		
+		{if $sidebar->getUserProfile()->userID}	
+			{if $sidebar->getUserCredits()|count}
+				<div class="userCredits">
+					<dl>
+						{foreach from=$sidebar->getUserCredits() item=$userCredit}
+							<dt{if $userCredit[class]} class="{@$userCredit[class]}"{/if}>{if $userCredit[url]}<a href="{@$userCredit[url]}">{@$userCredit[name]}:</a>{else}{@$userCredit[name]}:{/if}</dt>
+							<dd{if $userCredit[class]} class="{@$userCredit[class]}"{/if}>{if $userCredit[url]}<a href="{@$userCredit[url]}">{@$userCredit[value]}</a>{else}{@$userCredit[value]}{/if}</dd>
 						{/foreach}
-					</ul>
+					</dl>
 				</div>
 			{/if}
+		{/if}
+			
+		{if $sidebar->getUserContacts()|count}
+			<div class="userContacts">
+				<ul>
+					{foreach from=$sidebar->getUserContacts() item=$userContact}
+						<li{if $userContact[class]} class="{@$userContact[class]}"{/if}>{@$userContact[value]}</li>
+					{/foreach}
+				</ul>
+			</div>
 		{/if}
 	</div>
 </aside>

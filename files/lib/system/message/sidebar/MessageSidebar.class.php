@@ -175,27 +175,41 @@ class MessageSidebar {
 	 * @param	string		$name
 	 * @param 	string		$value
 	 * @param 	string		$url
+	 * @param	string		$class		css class name
 	 */
-	public function addUserCredit($name, $value, $url = '') {
-		$this->userCredits[] = array('name' => $name, 'value' => $value, 'url' => $url);
+	public function addUserCredit($name, $value, $url = '', $class = '') {
+		$this->userCredits[] = array(
+			'name' => $name,
+			'value' => $value,
+			'url' => $url,
+			'class' => $class
+		);
 	}
 	
 	/**
 	 * Adds a user status symbol to the sidebar.
 	 *
 	 * @param 	string		$value
+	 * @param	string		$class		css class name
 	 */
-	public function addUserStatus($value) {
-		$this->userStatus[] = array('value' => $value);
+	public function addUserStatus($value, $class = '') {
+		$this->userStatus[] = array(
+			'value' => $value,
+			'class' => $class
+		);
 	}
 	
 	/**
 	 * Adds a user contact option to the sidebar.
 	 *
 	 * @param	string		$value
+	 * @param	string		$class		css class name
 	 */
-	public function addUserContact($value) {
-		$this->userContacts[] = array('value' => $value);
+	public function addUserContact($value, $class = '') {
+		$this->userContacts[] = array(
+			'value' => $value,
+			'class' => $class
+		);
 	}
 	
 	/**
