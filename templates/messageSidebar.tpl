@@ -32,7 +32,7 @@
 			{if MESSAGE_SIDEBAR_ENABLE_AVATAR}
 				{if $sidebar->getUserProfile()->getAvatar()}
 					<div class="userAvatar">
-						<a href="{link controller='User' id=$sidebar->getUserProfile()->userID}{/link}" title="{lang}wcf.user.viewProfile{/lang}">{@$sidebar->getUserProfile()->getAvatar()}</a>
+						<a href="{link controller='User' id=$sidebar->getUserProfile()->userID}{/link}" title="{lang}wcf.user.viewProfile{/lang}">{@$sidebar->getUserProfile()->getAvatar()->getImageTag()}</a>
 					</div>
 				{/if}
 			{/if}
