@@ -1,4 +1,4 @@
-<aside class="messageSidebar">
+<aside class="wcf-messageSidebar">
 	<div>
 		{if $sidebar->getUserProfile()->userID}
 			{assign var='username' value=$sidebar->getUserProfile()->username}
@@ -20,7 +20,7 @@
 				{if MODULE_USER_RANK && MESSAGE_SIDEBAR_ENABLE_RANK}
 					{if $sidebar->getUserProfile()->getUserTitle()}
 						<div class="userTitle">
-							<p class="badge">{$sidebar->getUserProfile()->getUserTitle()|language}</p>
+							<p class="wcf-badge">{$sidebar->getUserProfile()->getUserTitle()|language}</p>
 						</div>
 					{/if}
 					{if $sidebar->getUserProfile()->getRank() && $sidebar->getUserProfile()->getRank()->rankImage}
@@ -43,7 +43,7 @@
 				</h1>
 				
 				<div class="userTitle">
-					<p class="badge">{lang}wcf.user.guest{/lang}</p>
+					<p class="wcf-badge">{lang}wcf.user.guest{/lang}</p>
 				</div>
 			</header>
 		{/if}
