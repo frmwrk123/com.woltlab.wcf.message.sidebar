@@ -4,7 +4,7 @@
 			{assign var='username' value=$sidebar->getUserProfile()->username}
 			
 			<header>
-				<h1 class="userName">
+				<h1 class="username">
 					<a href="{link controller='User' id=$sidebar->getUserProfile()->userID}{/link}" title="{lang}wcf.user.viewProfile{/lang}">
 						{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS}
 							{if $sidebar->getUserProfile()->isOnline()}
@@ -38,7 +38,7 @@
 			{/if}
 		{else}
 			<header>
-				<h1 class="userName">
+				<h1 class="username">
 					<span>{@$sidebar->getStyledUsername()}</span>
 				</h1>
 				
