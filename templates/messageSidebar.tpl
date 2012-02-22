@@ -4,7 +4,7 @@
 			{assign var='username' value=$sidebar->getUserProfile()->username}
 			
 			<header>
-				<h1 class="username">
+				<h1 class="wcf-username">
 					<a href="{link controller='User' id=$sidebar->getUserProfile()->userID}{/link}" title="{lang}wcf.user.viewProfile{/lang}">
 						{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS}
 							{if $sidebar->getUserProfile()->isOnline()}
@@ -31,7 +31,7 @@
 			
 			{if MESSAGE_SIDEBAR_ENABLE_AVATAR}
 				{if $sidebar->getUserProfile()->getAvatar()}
-					<div class="userAvatar">
+					<div class="wcf-userAvatar">
 						<a href="{link controller='User' id=$sidebar->getUserProfile()->userID}{/link}" title="{lang}wcf.user.viewProfile{/lang}">{@$sidebar->getUserProfile()->getAvatar()->getImageTag()}</a>
 					</div>
 				{/if}
