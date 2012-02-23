@@ -158,7 +158,7 @@ class MessageSidebar {
 	}
 	
 	/**
-	 * Returns a special username styles.
+	 * Returns a special username style.
 	 * 
 	 * @return string
 	 */

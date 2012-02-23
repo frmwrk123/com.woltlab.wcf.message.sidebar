@@ -38,7 +38,7 @@
 			{/if}
 		{else}
 			<header>
-				<h1 class="username">
+				<h1 class="wcf-username">
 					<span>{@$sidebar->getStyledUsername()}</span>
 				</h1>
 				
