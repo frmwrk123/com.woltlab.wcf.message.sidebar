@@ -5,7 +5,7 @@
 			
 			<header>
 				<h1 class="wcf-username">
-					<a href="{link controller='User' id=$sidebar->getUserProfile()->userID}{/link}" title="{lang}wcf.user.viewProfile{/lang}">
+					<a href="{link controller='User' object=$sidebar->getUserProfile()->getDecoratedObject()}{/link}" title="{lang}wcf.user.viewProfile{/lang}">
 						{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS}
 							{if $sidebar->getUserProfile()->isOnline()}
 								<img src="{icon}online{/icon}" alt="" title="{lang}wcf.user.online{/lang}" />
