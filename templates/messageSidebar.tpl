@@ -1,11 +1,11 @@
-<aside class="wcf-messageSidebar">
+<aside class="messageSidebar">
 	<div>
 		{if $sidebar->getUserProfile()->userID}
 			{assign var='username' value=$sidebar->getUserProfile()->username}
 			
 			<header>
-				<h1 class="wcf-username">
-					<a href="{link controller='User' id=$sidebar->getUserProfile()->userID}{/link}" title="{lang}wcf.user.viewProfile{/lang}">
+				<h1 class="username">
+					<a href="{link controller='User' object=$sidebar->getUserProfile()->getDecoratedObject()}{/link}" title="{lang}wcf.user.viewProfile{/lang}">
 						{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS}
 							{if $sidebar->getUserProfile()->isOnline()}
 								<img src="{icon}online{/icon}" alt="" title="{lang}wcf.user.online{/lang}" />
@@ -20,7 +20,7 @@
 				{if MODULE_USER_RANK && MESSAGE_SIDEBAR_ENABLE_RANK}
 					{if $sidebar->getUserProfile()->getUserTitle()}
 						<div class="userTitle">
-							<p class="wcf-badge">{$sidebar->getUserProfile()->getUserTitle()|language}</p>
+							<p class="badge">{$sidebar->getUserProfile()->getUserTitle()|language}</p>
 						</div>
 					{/if}
 					{if $sidebar->getUserProfile()->getRank() && $sidebar->getUserProfile()->getRank()->rankImage}
@@ -31,19 +31,19 @@
 			
 			{if MESSAGE_SIDEBAR_ENABLE_AVATAR}
 				{if $sidebar->getUserProfile()->getAvatar()}
-					<div class="wcf-userAvatar">
+					<div class="userAvatar">
 						<a href="{link controller='User' id=$sidebar->getUserProfile()->userID}{/link}" title="{lang}wcf.user.viewProfile{/lang}">{@$sidebar->getUserProfile()->getAvatar()->getImageTag()}</a>
 					</div>
 				{/if}
 			{/if}
 		{else}
 			<header>
-				<h1 class="wcf-username">
+				<h1 class="username">
 					<span>{@$sidebar->getStyledUsername()}</span>
 				</h1>
 				
 				<div class="userTitle">
-					<p class="wcf-badge">{lang}wcf.user.guest{/lang}</p>
+					<p class="badge">{lang}wcf.user.guest{/lang}</p>
 				</div>
 			</header>
 		{/if}
