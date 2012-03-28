@@ -8,9 +8,9 @@
 					<a href="{link controller='User' object=$sidebar->getUserProfile()->getDecoratedObject()}{/link}" title="{lang}wcf.user.viewProfile{/lang}">
 						{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS}
 							{if $sidebar->getUserProfile()->isOnline()}
-								<img src="{icon}online{/icon}" alt="" title="{lang}wcf.user.online{/lang}" />
+								<img src="{icon}online{/icon}" class="icon16" alt="" title="{lang}wcf.user.online{/lang}" />
 							{else}
-								<img src="{icon}offline{/icon}" alt="" title="{lang}wcf.user.offline{/lang}" />		
+								<img src="{icon}offline{/icon}" class="icon16" alt="" title="{lang}wcf.user.offline{/lang}" />		
 							{/if}
 						{/if}
 						<span>{@$sidebar->getStyledUsername()}</span>
@@ -32,7 +32,7 @@
 			{if MESSAGE_SIDEBAR_ENABLE_AVATAR}
 				{if $sidebar->getUserProfile()->getAvatar()}
 					<div class="userAvatar">
-						<a href="{link controller='User' id=$sidebar->getUserProfile()->userID}{/link}" title="{lang}wcf.user.viewProfile{/lang}">{@$sidebar->getUserProfile()->getAvatar()->getImageTag()}</a>
+						<a href="{link controller='User' object=$sidebar->getUserProfile()->getDecoratedObject()}{/link}" title="{lang}wcf.user.viewProfile{/lang}">{@$sidebar->getUserProfile()->getAvatar()->getImageTag()}</a>
 					</div>
 				{/if}
 			{/if}
