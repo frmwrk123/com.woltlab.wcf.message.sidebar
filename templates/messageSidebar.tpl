@@ -24,7 +24,7 @@
 						</div>
 					{/if}
 					{if $sidebar->getUserProfile()->getRank() && $sidebar->getUserProfile()->getRank()->rankImage}
-						<div class="userRank">{@$sidebar->getUserProfile()->getRank()->getImage()}</p>
+						<div class="userRank">{@$sidebar->getUserProfile()->getRank()->getImage()}</div>
 					{/if}
 				{/if}
 			</header>
@@ -61,7 +61,7 @@
 		{if $sidebar->getUserProfile()->userID}	
 			{if $sidebar->getUserCredits()|count}
 				<div class="userCredits">
-					<dl>
+					<dl class="dataList">
 						{foreach from=$sidebar->getUserCredits() item=$userCredit}
 							<dt{if $userCredit[class]} class="{@$userCredit[class]}"{/if}>{if $userCredit[url]}<a href="{@$userCredit[url]}">{@$userCredit[name]}:</a>{else}{@$userCredit[name]}:{/if}</dt>
 							<dd{if $userCredit[class]} class="{@$userCredit[class]}"{/if}>{if $userCredit[url]}<a href="{@$userCredit[url]}">{@$userCredit[value]}</a>{else}{@$userCredit[value]}{/if}</dd>
