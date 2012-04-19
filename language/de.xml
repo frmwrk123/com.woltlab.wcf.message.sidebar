@@ -5,15 +5,9 @@
 		<item name="wcf.acp.option.category.message.general.sidebar.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_avatar"><![CDATA[Avatar der Autoren anzeigen]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_avatar.description"><![CDATA[Soll der Avatar des Autors angezeigt werden?]]></item>
-		<item name="wcf.acp.option.message_sidebar_enable_friend_icon"><![CDATA[Freunde hervorheben]]></item>
-		<item name="wcf.acp.option.message_sidebar_enable_friend_icon.description"><![CDATA[Soll der Autor besonders hervorgehoben werden, wenn er ein Freund des Betrachters ist?]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_online_status"><![CDATA[Online-Status der Autoren anzeigen]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_online_status.description"><![CDATA[In der Seitenleiste wird auch mit einem kleinen Symbol signalisiert, ob dieser Benutzer gerade auf der Seite aktiv ist.]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_rank"><![CDATA[Benutzerrang der Autoren anzeigen]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_rank.description"><![CDATA[Soll der Benutzerrang der Autoren angezeigt werden?]]></item>
-		<item name="wcf.acp.option.message_sidebar_enable_registration_date"><![CDATA[Registrierungsdatum der Autoren anzeigen]]></item>
-		<item name="wcf.acp.option.message_sidebar_enable_registration_date.description"><![CDATA[Soll das Datum der Registrierung des jeweiligen Benutzers mit angezeigt werden?]]></item>
-		<item name="wcf.acp.option.message_sidebar_show_user_options"><![CDATA[Ausgewählte Profilfelder des Autors anzeigen]]></item>
-		<item name="wcf.acp.option.message_sidebar_show_user_options.description"><![CDATA[Bitte wählen Sie aus, welche Profilangaben des Autors in der Seitenleiste angezeigt werden sollen!]]></item>
 	</category>
 </language>

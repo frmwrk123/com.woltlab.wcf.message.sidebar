@@ -14,11 +14,12 @@
 	
 	<requiredpackages>
 		<requiredpackage minversion="2.0.0 Alpha 1">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="1.0.0 Alpha 1">com.woltlab.wcf.message</requiredpackage>
 		<requiredpackage minversion="1.0.0 Alpha 1">com.woltlab.wcf.user</requiredpackage>
+		<requiredpackage minversion="1.0.0 Alpha 1">com.woltlab.wcf.like</requiredpackage>
 	</requiredpackages>
 	
 	<instructions type="install">
-		<instruction type="file">files.tar</instruction>
 		<instruction type="template">templates.tar</instruction>
 		<instruction type="option">option.xml</instruction>
 		<instruction type="language">language/*.xml</instruction>

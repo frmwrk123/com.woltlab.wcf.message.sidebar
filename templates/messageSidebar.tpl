@@ -1,45 +1,42 @@
-<aside class="messageSidebar">
+<aside class="messageSidebar{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS && $userProfile->isOnline()} online{/if}">
 	<div>
-		{if $sidebar->getUserProfile()->userID}
-			{assign var='username' value=$sidebar->getUserProfile()->username}
+		{if $userProfile->userID}
+			{assign var='username' value=$userProfile->username}
 			
 			<header>
 				<h1 class="username">
-					<a href="{link controller='User' object=$sidebar->getUserProfile()->getDecoratedObject()}{/link}" title="{lang}wcf.user.viewProfile{/lang}">
-						{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS}
-							{if $sidebar->getUserProfile()->isOnline()}
-								<img src="{icon}online{/icon}" class="icon16" alt="" title="{lang}wcf.user.online{/lang}" />
-							{else}
-								<img src="{icon}offline{/icon}" class="icon16" alt="" title="{lang}wcf.user.offline{/lang}" />		
-							{/if}
-						{/if}
-						<span>{@$sidebar->getStyledUsername()}</span>
+					<a href="{link controller='User' object=$userProfile->getDecoratedObject()}{/link}">
+						<span>{$username}</span>
 					</a>
 				</h1>
-				
-				{if MODULE_USER_RANK && MESSAGE_SIDEBAR_ENABLE_RANK}
-					{if $sidebar->getUserProfile()->getUserTitle()}
-						<div class="userTitle">
-							<p class="badge">{$sidebar->getUserProfile()->getUserTitle()|language}</p>
-						</div>
-					{/if}
-					{if $sidebar->getUserProfile()->getRank() && $sidebar->getUserProfile()->getRank()->rankImage}
-						<div class="userRank">{@$sidebar->getUserProfile()->getRank()->getImage()}</div>
-					{/if}
-				{/if}
 			</header>
 			
 			{if MESSAGE_SIDEBAR_ENABLE_AVATAR}
-				{if $sidebar->getUserProfile()->getAvatar()}
+				{if $userProfile->getAvatar()}
 					<div class="userAvatar">
-						<a href="{link controller='User' object=$sidebar->getUserProfile()->getDecoratedObject()}{/link}" title="{lang}wcf.user.viewProfile{/lang}">{@$sidebar->getUserProfile()->getAvatar()->getImageTag()}</a>
+						<a href="{link controller='User' object=$userProfile->getDecoratedObject()}{/link}" class="framed">{@$userProfile->getAvatar()->getImageTag(128)}</a>
 					</div>
+				{/if}
+			{/if}
+			
+			<div class="userTitle">
+				<p class="badge">*TODO*</p>
+			</div>
+			{*if MODULE_USER_RANK && MESSAGE_SIDEBAR_ENABLE_RANK*}
+			{if false && MESSAGE_SIDEBAR_ENABLE_RANK}
+				{if $userProfile->getUserTitle()}
+					<div class="userTitle">
+						<p class="badge">{$userProfile->getUserTitle()|language}</p>
+					</div>
+				{/if}
+				{if $userProfile->getRank() && $userProfile->getRank()->rankImage}
+					<div class="userRank">{@$userProfile->getRank()->getImage()}</div>
 				{/if}
 			{/if}
 		{else}
 			<header>
 				<h1 class="username">
-					<span>{@$sidebar->getStyledUsername()}</span>
+					<span>{@$userProfile->username}</span>
 				</h1>
 				
 				<div class="userTitle">
@@ -48,37 +45,21 @@
 			</header>
 		{/if}
 			
-		{if $sidebar->getUserStatus()|count}
-			<div class="userStatus">
-				<ul>
-					{foreach from=$sidebar->getUserStatus() item=$userStatus}
-						<li{if $userStatus[class]} class="{@$userStatus[class]}"{/if}>{@$userStatus[value]}</li>
-					{/foreach}
-				</ul>
-			</div>
-		{/if}
-		
-		{if $sidebar->getUserProfile()->userID}	
-			{if $sidebar->getUserCredits()|count}
+		{if $userProfile->userID}	
+			{hascontent}
 				<div class="userCredits">
 					<dl class="dataList">
-						{foreach from=$sidebar->getUserCredits() item=$userCredit}
-							<dt{if $userCredit[class]} class="{@$userCredit[class]}"{/if}>{if $userCredit[url]}<a href="{@$userCredit[url]}">{@$userCredit[name]}:</a>{else}{@$userCredit[name]}:{/if}</dt>
-							<dd{if $userCredit[class]} class="{@$userCredit[class]}"{/if}>{if $userCredit[url]}<a href="{@$userCredit[url]}">{@$userCredit[value]}</a>{else}{@$userCredit[value]}{/if}</dd>
-						{/foreach}
+						{content}
+							{if MESSAGE_SIDEBAR_ENABLE_LIKES_RECEIVED}
+								<dt>{lang}wcf.like.likesReceived{/lang}</dt>
+								<dd>{#$userProfile->likes}</dd>
+							{/if}
+							
+							{event name='userCredits'}
+						{/content}
 					</dl>
 				</div>
-			{/if}
-		{/if}
-			
-		{if $sidebar->getUserContacts()|count}
-			<div class="userContacts">
-				<ul>
-					{foreach from=$sidebar->getUserContacts() item=$userContact}
-						<li{if $userContact[class]} class="{@$userContact[class]}"{/if}>{@$userContact[value]}</li>
-					{/foreach}
-				</ul>
-			</div>
+			{/hascontent}
 		{/if}
 	</div>
 </aside>
