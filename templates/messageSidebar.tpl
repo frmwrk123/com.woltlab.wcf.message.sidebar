@@ -14,7 +14,7 @@
 			{if MESSAGE_SIDEBAR_ENABLE_AVATAR}
 				{if $userProfile->getAvatar()}
 					<div class="userAvatar">
-						<a href="{link controller='User' object=$userProfile->getDecoratedObject()}{/link}" class="framed userLink" data-user-id="{@$userProfile->userID}">{@$userProfile->getAvatar()->getImageTag(128)}</a>
+						<a href="{link controller='User' object=$userProfile->getDecoratedObject()}{/link}" class="framed">{@$userProfile->getAvatar()->getImageTag(128)}</a>
 					</div>
 				{/if}
 			{/if}
