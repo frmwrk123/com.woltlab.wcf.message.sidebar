@@ -52,7 +52,7 @@
 						{content}
 							{if MESSAGE_SIDEBAR_ENABLE_LIKES_RECEIVED}
 								<dt>{lang}wcf.like.likesReceived{/lang}</dt>
-								<dd>{#$userProfile->likes}</dd>
+								<dd>{#$userProfile->likesReceived}</dd>
 							{/if}
 							
 							{event name='userCredits'}
