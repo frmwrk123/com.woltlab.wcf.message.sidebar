@@ -1,4 +1,4 @@
-<aside class="messageSidebar{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS && $userProfile->isOnline()} online{/if}">
+<aside class="messageSidebar">
 	<div>
 		{if $userProfile->userID}
 			{assign var='username' value=$userProfile->username}
@@ -15,6 +15,8 @@
 				{if $userProfile->getAvatar()}
 					<div class="userAvatar">
 						<a href="{link controller='User' object=$userProfile->getDecoratedObject()}{/link}" class="framed">{@$userProfile->getAvatar()->getImageTag(128)}</a>
+						
+						{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS && $userProfile->isOnline()}<span class="badge badgeGreen badgeOnline" title="{lang}wcf.user.online.title{/lang}">{lang}wcf.user.online{/lang}</span>{/if}
 					</div>
 				{/if}
 			{/if}
