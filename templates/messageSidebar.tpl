@@ -21,14 +21,10 @@
 				{/if}
 			{/if}
 			
-			<div class="userTitle">
-				<p class="badge">*TODO*</p>
-			</div>
-			{*if MODULE_USER_RANK && MESSAGE_SIDEBAR_ENABLE_RANK*}
-			{if false && MESSAGE_SIDEBAR_ENABLE_RANK}
+			{if MODULE_USER_RANK && MESSAGE_SIDEBAR_ENABLE_RANK}
 				{if $userProfile->getUserTitle()}
 					<div class="userTitle">
-						<p class="badge">{$userProfile->getUserTitle()|language}</p>
+						<p class="badge userTitleBadge{if $userProfile->getRank() && $userProfile->getRank()->cssClassName} {@$userProfile->getRank()->cssClassName}{/if}">{$userProfile->getUserTitle()}</p>
 					</div>
 				{/if}
 				{if $userProfile->getRank() && $userProfile->getRank()->rankImage}
