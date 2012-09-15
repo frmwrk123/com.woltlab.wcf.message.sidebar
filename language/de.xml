@@ -2,7 +2,6 @@
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="de">
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.message.general.sidebar"><![CDATA[Seitenleiste]]></item>
-		<item name="wcf.acp.option.category.message.general.sidebar.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_avatar"><![CDATA[Avatar der Autoren anzeigen]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_avatar.description"><![CDATA[Soll der Avatar des Autors angezeigt werden?]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_online_status"><![CDATA[Online-Status der Autoren anzeigen]]></item>

@@ -6,7 +6,7 @@
 				<parent>message.general</parent>
 			</category>
 		</categories>
-
+		
 		<options>
 			<option name="message_sidebar_enable_online_status">
 				<categoryname>message.general.sidebar</categoryname>

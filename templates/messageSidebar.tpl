@@ -42,8 +42,8 @@
 				</div>
 			</header>
 		{/if}
-			
-		{if $userProfile->userID}	
+		
+		{if $userProfile->userID}
 			{hascontent}
 				<div class="userCredits">
 					<dl class="dataList">
