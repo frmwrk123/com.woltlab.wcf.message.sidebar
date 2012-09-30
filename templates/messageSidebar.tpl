@@ -53,6 +53,25 @@
 								<dd>{#$userProfile->likesReceived}</dd>
 							{/if}
 							
+							{if MESSAGE_SIDEBAR_ENABLE_ACTIVITY_POINTS}
+								<dt><a class="activityPointsDisplay" href="{link controller='DetailedActivityPointList' object=$userProfile}{/link}">{lang}wcf.user.activity.point{/lang}</a></dt>
+								<dd><a class="activityPointsDisplay" href="{link controller='DetailedActivityPointList' object=$userProfile}{/link}">{#$userProfile->activityPoints}</a></dd>
+								
+								<script type="text/javascript">
+									//<![CDATA[
+									$('.activityPointsDisplay').click(function (event) {
+										event.preventDefault();
+										var id = WCF.getRandomID();
+										$('body').append('<div id="' + id + '"></div>');
+										WCF.showDialog(id, { title: '{lang}wcf.user.activity.point{/lang}' });
+										$('#' + id).load('{link controller="DetailedActivityPointList" object=$userProfile ajax=true}{/link}', function () {
+											$('#' + id).wcfDialog('render');
+										});
+									});
+									$('.activityPointsDisplay').removeClass('activityPointsDisplay');
+									//]]>
+								</script>
+							{/if}
 							{event name='userCredits'}
 						{/content}
 					</dl>
