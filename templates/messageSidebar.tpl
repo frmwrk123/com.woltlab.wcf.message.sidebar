@@ -46,7 +46,7 @@
 		{if $userProfile->userID}	
 			{hascontent}
 				<div class="userCredits">
-					<dl class="dataList">
+					<dl class="plain dataList">
 						{content}
 							{if MESSAGE_SIDEBAR_ENABLE_LIKES_RECEIVED}
 								<dt>{lang}wcf.like.likesReceived{/lang}</dt>
