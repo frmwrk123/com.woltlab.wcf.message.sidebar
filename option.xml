@@ -31,6 +31,11 @@
 				<defaultvalue>1</defaultvalue>
 				<options>module_like</options>
 			</option>
+			<option name="message_sidebar_enable_activity_points">
+				<categoryname>message.general.sidebar</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
 		</options>
 	</import>
 </data>
