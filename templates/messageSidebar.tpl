@@ -64,7 +64,7 @@
 										var $id = WCF.getRandomID();
 										$('<div id="' + $id + '"></div>').appendTo(document.body);
 										WCF.showDialog($id, { title: '{lang}wcf.user.activity.point{/lang}' });
-										$('#' + $id).load('{link controller="DetailedActivityPointList" object=$user}{/link}', function () {
+										$('#' + $id).load('{link controller="DetailedActivityPointList" object=$userProfile}{/link}', function () {
 											$('#' + $id).wcfDialog('render');
 										});
 									});
