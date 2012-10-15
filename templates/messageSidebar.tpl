@@ -43,7 +43,7 @@
 			</header>
 		{/if}
 			
-		{if $userProfile->userID}	
+		{if $userProfile->userID}
 			{hascontent}
 				<div class="userCredits">
 					<dl class="plain dataList">
@@ -60,12 +60,13 @@
 								<script type="text/javascript">
 									//<![CDATA[
 									$('.activityPointsDisplay').click(function (event) {
-										event.preventDefault();
-										var $id = WCF.getRandomID();
-										$('<div id="' + $id + '"></div>').appendTo(document.body);
-										WCF.showDialog($id, { title: '{lang}wcf.user.activity.point{/lang}' });
-										$('#' + $id).load('{link controller="DetailedActivityPointList" object=$userProfile}{/link}', function () {
-											$('#' + $id).wcfDialog('render');
+										WCF.showAJAXDialog('detailedActivityPointList', true, {
+											title: '{lang}wcf.user.activity.point{/lang}',
+											data: {
+												className: 'wcf\\data\\user\\UserProfileAction',
+												actionName: 'getDetailedActivityPointList',
+												objectIDs: [ {$userProfile->userID} ]
+											}
 										});
 									});
 									$('.activityPointsDisplay').removeClass('activityPointsDisplay');
