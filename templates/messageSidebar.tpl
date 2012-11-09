@@ -61,7 +61,7 @@
 									//<![CDATA[
 									$('.activityPointsDisplay').click(function (event) {
 										WCF.showAJAXDialog('detailedActivityPointList', true, {
-											title: '{lang}wcf.user.activity.point{/lang}',
+											title: '{lang}wcf.user.activityPoints{/lang}',
 											data: {
 												className: 'wcf\\data\\user\\UserProfileAction',
 												actionName: 'getDetailedActivityPointList',
