@@ -54,7 +54,7 @@
 							{/if}
 							
 							{if MESSAGE_SIDEBAR_ENABLE_ACTIVITY_POINTS && $userProfile->activityPoints}
-								<dt class="javascriptOnly"><a class="activityPointsDisplay">{lang}wcf.user.activityPoints{/lang}</a></dt>
+								<dt class="javascriptOnly">{lang}wcf.user.activityPoints{/lang}</dt>
 								<dd class="javascriptOnly"><a class="activityPointsDisplay">{#$userProfile->activityPoints}</a></dd>
 								
 								<script type="text/javascript">
