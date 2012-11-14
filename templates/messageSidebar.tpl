@@ -56,26 +56,28 @@
 							{if MESSAGE_SIDEBAR_ENABLE_ACTIVITY_POINTS && $userProfile->activityPoints}
 								<dt class="javascriptOnly">{lang}wcf.user.activityPoints{/lang}</dt>
 								<dd class="javascriptOnly"><a class="activityPointsDisplay">{#$userProfile->activityPoints}</a></dd>
-								
-								<script type="text/javascript">
-									//<![CDATA[
-									$('.activityPointsDisplay').click(function (event) {
-										WCF.showAJAXDialog('detailedActivityPointList', true, {
-											title: '{lang}wcf.user.activityPoints{/lang}',
-											data: {
-												className: 'wcf\\data\\user\\UserProfileAction',
-												actionName: 'getDetailedActivityPointList',
-												objectIDs: [ {$userProfile->userID} ]
-											}
-										});
-									});
-									$('.activityPointsDisplay').removeClass('activityPointsDisplay');
-									//]]>
-								</script>
 							{/if}
 							{event name='userCredits'}
 						{/content}
 					</dl>
+					
+					{if MESSAGE_SIDEBAR_ENABLE_ACTIVITY_POINTS && $userProfile->activityPoints}
+						<script type="text/javascript">
+							//<![CDATA[
+							$('.activityPointsDisplay').click(function (event) {
+								WCF.showAJAXDialog('detailedActivityPointList', true, {
+									title: '{lang}wcf.user.activityPoints{/lang}',
+									data: {
+										className: 'wcf\\data\\user\\UserProfileAction',
+										actionName: 'getDetailedActivityPointList',
+										objectIDs: [ {@$userProfile->userID} ]
+									}
+								});
+							});
+							$('.activityPointsDisplay').removeClass('activityPointsDisplay');
+							//]]>
+						</script>
+					{/if}
 				</div>
 			{/hascontent}
 		{/if}
