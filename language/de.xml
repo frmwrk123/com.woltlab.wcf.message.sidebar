@@ -4,10 +4,7 @@
 		<item name="wcf.acp.option.category.message.general.sidebar"><![CDATA[Seitenleiste]]></item>
 		<item name="wcf.acp.option.category.message.general.sidebar.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_avatar"><![CDATA[Avatar der Autoren anzeigen]]></item>
-		<item name="wcf.acp.option.message_sidebar_enable_avatar.description"><![CDATA[Soll der Avatar des Autors angezeigt werden?]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_online_status"><![CDATA[Online-Status der Autoren anzeigen]]></item>
-		<item name="wcf.acp.option.message_sidebar_enable_online_status.description"><![CDATA[In der Seitenleiste wird auch mit einem kleinen Symbol signalisiert, ob dieser Benutzer gerade auf der Seite aktiv ist.]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_rank"><![CDATA[Benutzerrang der Autoren anzeigen]]></item>
-		<item name="wcf.acp.option.message_sidebar_enable_rank.description"><![CDATA[Soll der Benutzerrang der Autoren angezeigt werden?]]></item>
 	</category>
 </language>
