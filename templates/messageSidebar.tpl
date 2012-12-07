@@ -54,8 +54,8 @@
 							{/if}
 							
 							{if MESSAGE_SIDEBAR_ENABLE_ACTIVITY_POINTS && $userProfile->activityPoints}
-								<dt class="javascriptOnly">{lang}wcf.user.activityPoints{/lang}</dt>
-								<dd class="javascriptOnly"><a class="activityPointsDisplay">{#$userProfile->activityPoints}</a></dd>
+								<dt class="javascriptOnly"><a class="activityPointsDisplay jsTooltip" title="{lang}wcf.user.activityPoints.showDetails{/lang}">{lang}wcf.user.activityPoints{/lang}</a></dt>
+								<dd class="javascriptOnly"><a class="activityPointsDisplay jsTooltip" title="{lang}wcf.user.activityPoints.showDetails{/lang}">{#$userProfile->activityPoints}</a></dd>
 							{/if}
 							{event name='userCredits'}
 						{/content}
