@@ -54,7 +54,7 @@
 							{/if}
 							
 							{if MESSAGE_SIDEBAR_ENABLE_ACTIVITY_POINTS && $userProfile->activityPoints}
-								<dt><a class="activityPointsDisplay jsTooltip" title="{lang}wcf.user.activityPoints.showDetails{/lang}">{lang}wcf.user.activityPoints{/lang}</a></dt>
+								<dt><a class="activityPointDisplay jsTooltip" title="{lang}wcf.user.activityPoint.showDetails{/lang}">{lang}wcf.user.activityPoint{/lang}</a></dt>
 								<dd>{#$userProfile->activityPoints}</dd>
 							{/if}
 							{event name='userCredits'}
@@ -64,17 +64,16 @@
 					{if MESSAGE_SIDEBAR_ENABLE_ACTIVITY_POINTS && $userProfile->activityPoints}
 						<script type="text/javascript">
 							//<![CDATA[
-							$('.activityPointsDisplay').click(function (event) {
+							$('.activityPointDisplay').click(function (event) {
 								WCF.showAJAXDialog('detailedActivityPointList', true, {
-									title: '{lang}wcf.user.activityPoints{/lang}',
+									title: '{lang}wcf.user.activityPoint{/lang}',
 									data: {
 										className: 'wcf\\data\\user\\UserProfileAction',
 										actionName: 'getDetailedActivityPointList',
 										objectIDs: [ {@$userProfile->userID} ]
 									}
 								});
-							});
-							$('.activityPointsDisplay').removeClass('activityPointsDisplay');
+							}).removeClass('activityPointDisplay');
 							//]]>
 						</script>
 					{/if}
