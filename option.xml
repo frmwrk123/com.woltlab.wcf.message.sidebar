@@ -2,34 +2,44 @@
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/option.xsd">
 	<import>
 		<categories>
-			<category name="message.general.sidebar">
-				<parent>message.general</parent>
+			<category name="message.sidebar">
+				<parent>message</parent>
 			</category>
 		</categories>
 		
 		<options>
 			<option name="message_sidebar_enable_online_status">
-				<categoryname>message.general.sidebar</categoryname>
+				<categoryname>message.sidebar</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 			</option>
 			<option name="message_sidebar_enable_rank">
-				<categoryname>message.general.sidebar</categoryname>
+				<categoryname>message.sidebar</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 				<options>module_user_rank</options>
 			</option>
 			<option name="message_sidebar_enable_avatar">
-				<categoryname>message.general.sidebar</categoryname>
+				<categoryname>message.sidebar</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 				<options>module_avatar</options>
 			</option>
+			<option name="message_sidebar_enable_message_group_starter_icon">
+				<categoryname>message.sidebar</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
 			<option name="message_sidebar_enable_likes_received">
-				<categoryname>message.general.sidebar</categoryname>
+				<categoryname>message.sidebar</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 				<options>module_like</options>
+			</option>
+			<option name="message_sidebar_enable_activity_points">
+				<categoryname>message.sidebar</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
 			</option>
 		</options>
 	</import>

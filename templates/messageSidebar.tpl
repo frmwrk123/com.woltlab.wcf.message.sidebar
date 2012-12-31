@@ -16,7 +16,7 @@
 					<div class="userAvatar">
 						<a href="{link controller='User' object=$userProfile->getDecoratedObject()}{/link}" class="framed">{@$userProfile->getAvatar()->getImageTag(128)}</a>
 						
-						{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS && $userProfile->isOnline()}<span class="badge badgeGreen badgeOnline" title="{lang}wcf.user.online.title{/lang}">{lang}wcf.user.online{/lang}</span>{/if}
+						{if MESSAGE_SIDEBAR_ENABLE_ONLINE_STATUS && $userProfile->isOnline()}<span class="badge green badgeOnline" title="{lang}wcf.user.online.title{/lang}">{lang}wcf.user.online{/lang}</span>{/if}
 					</div>
 				{/if}
 			{/if}
@@ -46,16 +46,37 @@
 		{if $userProfile->userID}
 			{hascontent}
 				<div class="userCredits">
-					<dl class="dataList">
+					<dl class="plain dataList">
 						{content}
-							{if MESSAGE_SIDEBAR_ENABLE_LIKES_RECEIVED}
+							{if MESSAGE_SIDEBAR_ENABLE_LIKES_RECEIVED && $userProfile->likesReceived}
 								<dt>{lang}wcf.like.likesReceived{/lang}</dt>
 								<dd>{#$userProfile->likesReceived}</dd>
 							{/if}
 							
+							{if MESSAGE_SIDEBAR_ENABLE_ACTIVITY_POINTS && $userProfile->activityPoints}
+								<dt><a class="activityPointDisplay jsTooltip" title="{lang}wcf.user.activityPoint.showDetails{/lang}">{lang}wcf.user.activityPoint{/lang}</a></dt>
+								<dd>{#$userProfile->activityPoints}</dd>
+							{/if}
 							{event name='userCredits'}
 						{/content}
 					</dl>
+					
+					{if MESSAGE_SIDEBAR_ENABLE_ACTIVITY_POINTS && $userProfile->activityPoints}
+						<script type="text/javascript">
+							//<![CDATA[
+							$('.activityPointDisplay').click(function (event) {
+								WCF.showAJAXDialog('detailedActivityPointList', true, {
+									title: '{lang}wcf.user.activityPoint{/lang}',
+									data: {
+										className: 'wcf\\data\\user\\UserProfileAction',
+										actionName: 'getDetailedActivityPointList',
+										objectIDs: [ {@$userProfile->userID} ]
+									}
+								});
+							}).removeClass('activityPointDisplay');
+							//]]>
+						</script>
+					{/if}
 				</div>
 			{/hascontent}
 		{/if}

@@ -3,10 +3,7 @@
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.message.general.sidebar"><![CDATA[Sidebar]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_avatar"><![CDATA[Show avatar]]></item>
-		<item name="wcf.acp.option.message_sidebar_enable_avatar.description"><![CDATA[By enabling this option the avatar of the author will be displayed.]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_online_status"><![CDATA[Show online status]]></item>
-		<item name="wcf.acp.option.message_sidebar_enable_online_status.description"><![CDATA[A status icon will be displayed indicating if the user is currently active on this site.]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_rank"><![CDATA[Show user rank]]></item>
-		<item name="wcf.acp.option.message_sidebar_enable_rank.description"><![CDATA[The user rank of the author will be displayed.]]></item>
 	</category>
 </language>
