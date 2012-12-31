@@ -2,7 +2,6 @@
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="en">
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.message.general.sidebar"><![CDATA[Sidebar]]></item>
-		<item name="wcf.acp.option.category.message.general.sidebar.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_avatar"><![CDATA[Show avatar]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_online_status"><![CDATA[Show online status]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_rank"><![CDATA[Show user rank]]></item>

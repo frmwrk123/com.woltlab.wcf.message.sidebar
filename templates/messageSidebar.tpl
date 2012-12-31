@@ -42,7 +42,7 @@
 				</div>
 			</header>
 		{/if}
-			
+		
 		{if $userProfile->userID}
 			{hascontent}
 				<div class="userCredits">
