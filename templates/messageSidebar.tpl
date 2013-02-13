@@ -1,3 +1,18 @@
+{if !$__messageSidebarJavascript|isset}
+	<script type="text/javascript">
+		//<![CDATA[
+		$(function() {
+			WCF.Language.addObject({
+				'wcf.user.activityPoint': '{lang}wcf.user.activityPoint{/lang}'
+			});
+			
+			WCF.User.Profile.ActivityPointList.init();
+		});
+		//]]>
+	</script>
+	{assign var=__messageSidebarJavascript value=true}
+{/if}
+
 <aside class="messageSidebar">
 	<div>
 		{if $userProfile->userID}
@@ -54,29 +69,12 @@
 							{/if}
 							
 							{if MESSAGE_SIDEBAR_ENABLE_ACTIVITY_POINTS && $userProfile->activityPoints}
-								<dt><a class="activityPointDisplay jsTooltip" title="{lang}wcf.user.activityPoint.showDetails{/lang}">{lang}wcf.user.activityPoint{/lang}</a></dt>
+								<dt><a class="activityPointsDisplay jsTooltip" title="{lang}wcf.user.activityPoint.showDetails{/lang}" data-user-id="{@$userProfile->userID}">{lang}wcf.user.activityPoint{/lang}</a></dt>
 								<dd>{#$userProfile->activityPoints}</dd>
 							{/if}
 							{event name='userCredits'}
 						{/content}
 					</dl>
-					
-					{if MESSAGE_SIDEBAR_ENABLE_ACTIVITY_POINTS && $userProfile->activityPoints}
-						<script type="text/javascript">
-							//<![CDATA[
-							$('.activityPointDisplay').click(function (event) {
-								WCF.showAJAXDialog('detailedActivityPointList', true, {
-									title: '{lang}wcf.user.activityPoint{/lang}',
-									data: {
-										className: 'wcf\\data\\user\\UserProfileAction',
-										actionName: 'getDetailedActivityPointList',
-										objectIDs: [ {@$userProfile->userID} ]
-									}
-								});
-							}).removeClass('activityPointDisplay');
-							//]]>
-						</script>
-					{/if}
 				</div>
 			{/hascontent}
 		{/if}
