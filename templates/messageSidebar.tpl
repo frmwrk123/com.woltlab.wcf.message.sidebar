@@ -73,6 +73,15 @@
 								<dd>{#$userProfile->activityPoints}</dd>
 							{/if}
 							{event name='userCredits'}
+							{if MESSAGE_SIDEBAR_USER_OPTIONS}
+								{assign var='__sidebarUserOptions' value=','|explode:MESSAGE_SIDEBAR_USER_OPTIONS}
+								{foreach from=$__sidebarUserOptions item='__sidebarUserOption'}
+									{if $userProfile->getUserOption($__sidebarUserOption)}
+										<dt>{lang}wcf.user.option.{$__sidebarUserOption}{/lang}</dt>
+										<dd>{$userProfile->getUserOption($__sidebarUserOption)}</dd>
+									{/if}
+								{/foreach}
+							{/if}
 						{/content}
 					</dl>
 				</div>

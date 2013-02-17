@@ -41,6 +41,11 @@
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 			</option>
+			<option name="message_sidebar_user_options">
+				<categoryname>message.sidebar</categoryname>
+				<optiontype>useroptions</optiontype>
+				<defaultvalue>location</defaultvalue>
+			</option>
 		</options>
 	</import>
 </data>
